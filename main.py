@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 async def set_commands(bot: Bot):
     commands = [
         BotCommand(command="/trend", description="Показать максимальные рост и падения за последние сутки"),
-        BotCommand(command="/most_searched", description="Показать какие монеты чаще всего искали в последнее время")
+        BotCommand(command="/searched", description="Показать какие монеты чаще всего искали в последнее время")
     ]
     await bot.set_my_commands(commands)
 
@@ -31,7 +31,7 @@ async def main():
     register_handlers_searched(dp)
 
     await set_commands(bot)
-
+    await dp.skip_updates()
     await dp.start_polling()
 
 if __name__ == '__main__':

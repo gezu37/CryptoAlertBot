@@ -1,27 +1,27 @@
 [
     {
         "name": "CATCOIN",
-        "priceChange24h": 881.20789921,
+        "priceChange24h": 970.51378502,
         "slug": "catcoin-token"
     },
     {
         "name": "Crypto Inu",
-        "priceChange24h": 770.82405664,
+        "priceChange24h": 535.42501074,
         "slug": "crypto-inu"
     },
     {
-        "name": "ELON BUYS TWITTER",
-        "priceChange24h": 288.45689212,
-        "slug": "elon-buys-twitter"
+        "name": "Web3 Doge",
+        "priceChange24h": 274.77273589,
+        "slug": "web3-doge"
     },
     {
         "name": "Konstrukt",
-        "priceChange24h": 229.70540554,
+        "priceChange24h": 185.15978965,
         "slug": "konstrukt"
     },
     {
-        "name": "H2O",
-        "priceChange24h": 187.30447542,
-        "slug": "h2o"
+        "name": "ASYAGRO",
+        "priceChange24h": 177.27588555,
+        "slug": "asyagro"
     }
 ]

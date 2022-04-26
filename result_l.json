@@ -1,0 +1,27 @@
+[
+    {
+        "name": "APPLECHAIN",
+        "priceChange24h": -98.95974542,
+        "slug": "applechain"
+    },
+    {
+        "name": "WonderHero",
+        "priceChange24h": -98.45651205,
+        "slug": "wonderhero"
+    },
+    {
+        "name": "Sword Art Online",
+        "priceChange24h": -81.64885389,
+        "slug": "sword-art-online"
+    },
+    {
+        "name": "Ponyo Impact",
+        "priceChange24h": -71.52633865,
+        "slug": "ponyo-inu"
+    },
+    {
+        "name": "SwinCoin",
+        "priceChange24h": -67.8332824,
+        "slug": "swincoin"
+    }
+]

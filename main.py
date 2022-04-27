@@ -20,7 +20,7 @@ async def set_commands(bot: Bot):
     commands = [
         BotCommand(command="/trend", description="Показать максимальные рост и падения за последние сутки"),
         BotCommand(command="/searched", description="Показать какие монеты чаще всего искали в последнее время"),
-        BotCommand(command="/BTC_price_updates", description="Ежедневные уведомления о цене BTC")
+        BotCommand(command="/updates", description="Ежедневные уведомления о цене BTC")
     ]
     await bot.set_my_commands(commands)
 
@@ -33,11 +33,12 @@ async def error_bot_blocked(update: types.Update, exception: BotBlocked):
 
 @dp.callback_query_handler(text="subscribe")
 async def subscribe(call: types.CallbackQuery):
-    user_id = call.from_user.id
+    user_id = str(call.from_user.id)
     with open('users_id.csv', mode='w') as users_id:
         user_writer = csv.writer(users_id, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         user_writer.writerow(user_id)
     await call.message.answer("Вы подписались на уведомления по изменению цены Bitcoin")
+    await call.answer()
 
 
 async def main():
@@ -46,6 +47,7 @@ async def main():
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
     )
     logger.error("Starting bot")
+
     register_handlers_trend(dp)
     register_handlers_searched(dp)
     register_handlers_subscribe(dp)

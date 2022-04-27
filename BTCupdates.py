@@ -8,4 +8,4 @@ async def cmd_subscribe(message: types.Message):
 
 
 def register_handlers_subscribe(dp: Dispatcher):
-    dp.register_message_handler(cmd_subscribe, commands="BTC_price_updates")
+    dp.register_message_handler(cmd_subscribe, commands="updates")

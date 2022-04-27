@@ -1,6 +1,5 @@
 from fake_useragent import UserAgent
 import requests
-import json
 
 agent = UserAgent()
 rez = []
@@ -24,5 +23,4 @@ def collect_data_search():
                 'slug': slug
             }
         )
-    with open('result_a.json', 'w') as file:
-        json.dump(rez, file, indent=4, ensure_ascii=False)
+    return rez

@@ -1,14 +1,10 @@
 from aiogram import Dispatcher, types
 from MostSearchCollect import collect_data_search
-import json
 from aiogram.utils.markdown import hlink, hbold
 
 
 async def mostsearched(message: types.Message):
-    collect_data_search()
-
-    with open('result_a.json') as file:
-        data = json.load(file)
+    data = collect_data_search()
     for item in data:
         link_part = item.get("slug")
         link = f"https://coinmarketcap.com/ru/currencies/{link_part}/"

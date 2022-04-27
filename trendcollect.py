@@ -1,10 +1,8 @@
 from fake_useragent import UserAgent
 import requests
-import json
 
 agent = UserAgent()
 rez = []
-rez1 = []
 
 
 def collect_data():
@@ -25,19 +23,16 @@ def collect_data():
                 'slug': slug
             }
         )
-    with open('result_g.json', 'w') as file:
-        json.dump(rez, file, indent=4, ensure_ascii=False)
 
     for i in data["data"]["loserList"]:
         name = i['name']
         change = i['priceChange']['priceChange24h']
         slug = i['slug']
-        rez1.append(
+        rez.append(
             {
                 'name': name,
                 'priceChange24h': change,
                 'slug': slug
             }
         )
-    with open('result_l.json', 'w') as file:
-        json.dump(rez1, file, indent=4, ensure_ascii=False)
+    return rez

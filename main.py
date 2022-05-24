@@ -1,5 +1,6 @@
 import asyncio
 import csv
+import time
 from BTCupdates import btcprice_collect
 from aiogram.types.bot_command import BotCommand
 from aiogram.utils.exceptions import BotBlocked
@@ -21,7 +22,7 @@ async def set_commands(bot: Bot):
     commands = [
         BotCommand(command="/trend", description="Показать максимальные рост и падения за последние сутки"),
         BotCommand(command="/searched", description="Показать какие монеты чаще всего искали в последнее время"),
-        BotCommand(command="/updates", description="Ежедневные уведомления о цене BTC")
+        BotCommand(command="/updates", description="Ежечасные уведомления о цене BTC")
     ]
     await bot.set_my_commands(commands)
 
@@ -57,7 +58,6 @@ async def subscribe(call: types.CallbackQuery):
 async def notifications(sleep_for):
     while True:
         await asyncio.sleep(sleep_for)
-
         with open('users_id.csv', 'r') as users_id:
             user_reader = csv.reader(users_id)
             for row in user_reader:
@@ -76,7 +76,8 @@ async def main():
     register_handlers_trend(dp)
     register_handlers_searched(dp)
     register_handlers_subscribe(dp)
-
+    loop = asyncio.get_event_loop()
+    loop.create_task(notifications(3600))
     await set_commands(bot)
     await dp.skip_updates()
     await dp.start_polling()
@@ -84,5 +85,6 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+
 
 

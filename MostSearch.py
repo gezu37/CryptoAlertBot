@@ -3,6 +3,7 @@ from MostSearchCollect import collect_data_search
 from aiogram.utils.markdown import hlink, hbold
 
 
+
 async def mostsearched(message: types.Message):
     data = collect_data_search()
     for item in data:

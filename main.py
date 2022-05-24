@@ -1,6 +1,5 @@
 import asyncio
 import csv
-import time
 from BTCupdates import btcprice_collect
 from aiogram.types.bot_command import BotCommand
 from aiogram.utils.exceptions import BotBlocked
@@ -11,7 +10,7 @@ import logging
 from aiogram import Bot, Dispatcher, types, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-bot = Bot(token="5088468387:AAHUbnEmXjZhDjSLefJ79nvpvVsAGS9_1qA", parse_mode=types.ParseMode.HTML)
+bot = Bot(token="", parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=MemoryStorage())
 logging.basicConfig(level=logging.INFO)
 
